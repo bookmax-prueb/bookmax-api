@@ -3,9 +3,9 @@ import api from './api/api.js'
 
 const server = http.createServer(api)
 
-server.on('listening', ()=> {
-    console.info('Server running http:localhost:8000')
+server.on('listening', () => {
+  console.info('Server running http:localhost:8000')
 })
 
-//TODO change port to env variable
+// TODO change port to env variable
 server.listen(8000)
