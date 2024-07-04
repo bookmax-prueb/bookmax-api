@@ -1,5 +1,6 @@
 import http from 'http'
 import api from './api/api.js'
+import './api/config/database.js'
 
 const server = http.createServer(api)
 
