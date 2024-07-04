@@ -24,10 +24,10 @@ export default class Service {
   }
 
   softDeleteById (id) {
-    return this.model.findByIdAndUpdate(id, { isDeleted: true }, { new: true })
+    return this.model.findByIdAndUpdate(id, { isActive: true }, { new: true })
   }
 
   restoreById (id) {
-    return this.model.findByIdAndUpdate(id, { isDeleted: false }, { new: true })
+    return this.model.findByIdAndUpdate(id, { isActive: false }, { new: true })
   }
 }

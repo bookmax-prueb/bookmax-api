@@ -16,7 +16,9 @@
   "author": "bookmax-prueb",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
+    "jwt-simple": "^0.5.6",
     "mongoose": "^8.4.4"
   },
   "eslintConfig": {
