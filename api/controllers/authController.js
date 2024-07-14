@@ -1,6 +1,9 @@
 import Author from '../models/books/Author.js'
 import Reader from '../models/books/Reader.js'
 import bcrypt from 'bcrypt'
+import User from '../models/books/User.js'
+import jwt from 'jwt-simple'
+import { token as tokenConfig } from '../config/index.js'
 
 // TODO: validar body
 const register = async (req, res) => {
@@ -28,6 +31,34 @@ const register = async (req, res) => {
   }
 }
 
+const login = async (req, res) => {
+  const { email, password } = req.body
+  const user = await User.findOne({
+    email
+  })
+  if (!user) {
+    return res.status(404).json({
+      msg: 'user not found'
+    })
+  }
+  const passwordMatched = await bcrypt.compare(password, user.password)
+  if (passwordMatched) {
+    const payload = {
+      userId: user.id
+    }
+    const token = jwt.encode(payload, tokenConfig.secret)
+    return res.json({
+      msg: 'login sucess',
+      token
+    })
+  } else {
+    return res.status(401).json({
+      msg: 'invalid credentials'
+    })
+  }
+}
+
 export {
-  register
+  register,
+  login
 }
