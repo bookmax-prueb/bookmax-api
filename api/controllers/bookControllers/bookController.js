@@ -1,5 +1,5 @@
-import Service from '../services/Service.js'
-import Book from '../models/books/Book.js'
+import Service from '../../services/Service.js'
+import Book from '../../models/books/Book.js'
 
 const bookService = new Service(Book)
 
