@@ -18,6 +18,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
+    "joi": "^17.13.3",
     "jwt-simple": "^0.5.6",
     "mongoose": "^8.4.4"
   },
@@ -26,7 +27,13 @@
       "./node_modules/standard/eslintrc.json"
     ],
     "rules": {
-      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ],
+        "prefer-regex-literals": "off"
     }
   },
   "devDependencies": {
