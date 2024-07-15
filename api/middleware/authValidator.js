@@ -3,6 +3,7 @@ import { token as tokenConfig } from '../config/index.js'
 import User from '../models/books/User.js'
 
 const authUser = (roles) => async (req, res, next) => {
+  // eslint-disable-next-line dot-notation
   const token = req.headers['authorization']
   if (!token) {
     return res.status(401).json({

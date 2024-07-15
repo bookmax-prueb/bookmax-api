@@ -1,5 +1,4 @@
-import Comment from '../../models/books/Commemts.js'
-import Book from '../../models/books/Book.js'
+import Comment from '../../models/books/Comment.js'
 import Service from '../../services/Service.js'
 
 const commentService = new Service(Comment)
