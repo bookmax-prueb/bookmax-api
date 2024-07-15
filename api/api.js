@@ -14,4 +14,11 @@ api.get('/test', (req, res) => {
 api.use('/auth', authRouter)
 api.use('/books', bookRouter)
 
+api.use((err, req, res, _next) => {
+  console.error(err)
+  res.status(500).json({
+    error: err
+  })
+})
+
 export default api

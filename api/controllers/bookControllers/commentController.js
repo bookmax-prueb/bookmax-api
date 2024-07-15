@@ -19,6 +19,17 @@ const createComment = async (req, res) => {
   }
 }
 
+const getCommentByBookId = async (req, res) => {
+  const { bookId } = req.params
+  const books = await Comment.find({
+    book: bookId
+  })
+  return res.json({
+    books
+  })
+}
+
 export {
-  createComment
+  createComment,
+  getCommentByBookId
 }
