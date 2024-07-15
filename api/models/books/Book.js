@@ -10,14 +10,16 @@ const bookSchema = new Schema(
       type: String,
       required: true
     },
-    authorId: {
+    author: {
       type: Schema.Types.ObjectId,
       ref: 'Author',
       required: true
     },
     score: {
       type: Number,
-      required: true
+      required: true,
+      min: 0,
+      max: 10
     },
     genre: {
       type: String,

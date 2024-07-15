@@ -12,7 +12,7 @@ export default class Service {
   }
 
   updateById (id, data) {
-    return this.model.findByIdAndUpdate(id, data)
+    return this.model.findByIdAndUpdate(id, data, { new: true })
   }
 
   create (data) {
