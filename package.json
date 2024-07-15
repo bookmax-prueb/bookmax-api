@@ -24,7 +24,10 @@
   "eslintConfig": {
     "extends": [
       "./node_modules/standard/eslintrc.json"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
