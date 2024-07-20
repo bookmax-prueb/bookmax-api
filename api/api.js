@@ -1,9 +1,13 @@
 import express from 'express'
 import bookRouter from './routes/bookRoutes.js'
 import authRouter from './routes/authRoutes.js'
+import cors from 'cors'
+import morgan from 'morgan'
 
 const api = express()
+api.use(cors())
 api.use(express.json())
+api.use(morgan('tiny'))
 
 api.get('/test', (req, res) => {
   res.json({
